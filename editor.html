@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>HTML Live Editor</h1>
+
+<!-- Create a textarea element for the user to input HTML code -->
+
+<textarea id="html-input"></textarea>
+
+<!-- Create a button to update the live preview -->
+
+<button onclick="updatePreview()">Update Preview</button>
+
+<!-- Create a div to hold the live preview of the HTML code -->
+
+<div id="html-preview"></div>
+
+<script>
+  // Get references to the textarea and preview div
+ 
+ const htmlInput = document.getElementById('html-input');
+  const htmlPreview = document.getElementById('html-preview');
+
+  // Define a function to update the live preview
+  
+  function updatePreview() {
+    // Set the innerHTML of the preview div to the value of the textarea
+    htmlPreview.innerHTML = htmlInput.value;
+  }
+</script>
+
+</body>
+</html>
