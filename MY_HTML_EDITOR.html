@@ -1,43 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html spellcheck>
 <head>
-  <title>Redeem_Tech-Editor</title>
+  <title>Redeem_Tech_Editor</title>
   <style>
-    /* Define a class for the parent container */
+  
     .container {
       display: flex;
       flex-direction: row;
+
     }
 
-    /* Define classes for the input and preview elements */
-    #html-input, #html-preview {
+    #html-input {
       width: 55%;
+      
     }
   </style>
 </head>
-<body align = "left">
+<body align = "left" bgcolor = "PaleTurquoise" >
 
-<h1>HTML Live EDITOR </h1>
+<h1>HTML COMPILER</h1>
 
 <div class="container">
   <!-- Create a textarea element for the user to input HTML code -->
-  <textarea id="html-input" size = "200" rows="30" cols="80" style="font-size: 18px;"></textarea>
-
-  <!-- Create a div to hold the live preview of the HTML code -->
-  <legend><div id="html-preview" style="font-size: 18px;"></div><legend><big>OUTPUT</big></legend></legend>
+  <textarea id="html-input" size = "200" rows="25" cols="95" style="font-size: 18px;"></textarea>
 </div>
 
 <br><button onclick="updatePreview()"><big>Run</big></button></br>
 
-<script>
-  // Get references to the textarea and preview div
-  const htmlInput = document.getElementById('html-input');
-  const htmlPreview = document.getElementById('html-preview');
-
-  // Define a function to update the live preview
-  function updatePreview() {
-    // Set the innerHTML of the preview div to the value of the textarea
-    htmlPreview.innerHTML = htmlInput.value;
+<script> 
+const htmlInput = document.getElementById('html-input');
+ function updatePreview() {
+   var newWindow = window.open();
+   newWindow.document.write(htmlInput.value);
   }
 </script>
 
