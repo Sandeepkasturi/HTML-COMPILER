@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html spellcheck>
+<html>
 <head>
   <title>Redeem_Tech_Editor</title>
   <style>
@@ -27,11 +27,22 @@
 
 <br><button onclick="updatePreview()"><big>Run</big></button></br>
 
-<script> 
-const htmlInput = document.getElementById('html-input');
- function updatePreview() {
-   var newWindow = window.open();
-   newWindow.document.write(htmlInput.value);
+<script>
+  // Get references to the textarea elements
+  const htmlInput = document.getElementById(&#39;html-input&#39;);
+  const cssInput = document.getElementById(&#39;css-input&#39;);
+
+  // Define a function to update the live preview
+  function updatePreview() {
+    // Check if HTML input is empty
+    if (!htmlInput.value) {
+      alert(&quot;HTML input field is empty!&quot;);
+      //return;
+    }
+
+    // Open a new window and write the HTML input
+    var newWindow = window.open();
+    newWindow.document.write(&#39;<style>&#39; + cssInput.value + &#39;</style>&#39; + htmlInput.value);
   }
 </script>
 
